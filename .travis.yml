@@ -1,8 +1,10 @@
 sudo: required
-services :
+services:
   - docker 
 
-before_install :
+before_install:
   - docker build -t vinothbigdatadocker/docker-react -f Dockerfile.dev .
-script :
+
+script:
   - docker run vinothbigdatadocker/docker-react npm run test -- --coverage
+
